@@ -10,4 +10,13 @@ for these certificates and view the details regarding the documents. In order to
 government records a citizen needs to present at the government offices and it will increase unwanted 
 rushes at the government offices and time wasting</p>
 
+## Software Specifications
+
+pie
+"Python-Django": 5.3
+"Mysql" : 35
+"HTML" : 63.3
+"CSS" : 18.2
+"Javascript" : 13.2
+
 
