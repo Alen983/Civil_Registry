@@ -1,0 +1,84 @@
+{% extends 'AdminHeader.html' %}
+{% block adminviewfeedback %}
+<form method="POST">
+{% csrf_token%}
+
+<h2 align="center" style="color:brown"> Customer Details</h2>
+<br>
+<br>
+<br>
+
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    <table >
+            <tr style="background:#ff3c41">
+    <th>Date of marrage</th>
+    <th>Place of marrage</th>
+    <th>Local area</th>
+    <th>village</th>
+    <th>thaluk</th>
+     <th>district</th>
+     <th>customer name</th>
+     <th>email</th>
+     <th>phone no</th>
+    
+    {% for x in data %}
+    <tr>
+        
+       
+       
+        <td>
+            {{x.1}}
+        </td>
+        <td>
+            {{x.2}}
+       
+        </td>
+        <td>
+            {{x.3}}
+        </td> 
+        <td>
+            {{x.4}}
+        </td> 
+        <td>
+            {{x.5}}
+        </td>  
+        <td>
+            {{x.6}}
+        </td>       
+        <td>
+            {{x.9}}
+        </td>       
+        <td>
+            {{x.10}}
+        </td>       
+        <td>
+            {{x.11}}
+        </td>        
+          </tr> 
+
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'AdminHeader.html' %}
+{% block appli %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <h2 align="center" style="color:brown">Applications</h2>
+    <br>
+    
+    <table class="customers" align="center">
+       
+        <tr><td><a href="/viewmarriageregistration/">Marriage Registration</a></td></tr>
+        <tr><td><a href="/viewbirthregistration/">Birth Certificate Registration</a></td></tr>
+        <tr><td><a href="/viewdeathregistration/">Death Registration</a></td></tr>
+        <tr><td><a href="/viewvotersidregistration/">Voters ID Registration</a></td></tr>
+        <tr><td><a href="/viewlicenceregistration/">Licence Registration</a></td></tr>
+         <tr><td><a href="/adminviewpassport/">Passport Registration</a></td></tr>
+      
+        
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

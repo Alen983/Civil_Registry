@@ -1,0 +1,26 @@
+{% extends 'CustomerHeader.html' %}
+{% block appli %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <h2 align="center" style="color:brown">Applications</h2>
+    <br>
+    
+    <table class="customers" align="center">
+       
+        <tr><td><a href="/marriageregistration/">Marriage Registration</a></td></tr>
+        <tr><td><a href="/BirthCertificateregistration/">Birth Certificate Registration</a></td></tr>
+        <tr><td><a href="/deathregistration/">Death Registration</a></td></tr>
+        <tr><td><a href="/voteridreg/">Voters ID Registration</a></td></tr>
+         <tr><td><a href="/licencereg/">Licence Registration</a></td></tr>
+          <tr><td><a href="/passport/">Passport Registration</a></td></tr>
+      
+        
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

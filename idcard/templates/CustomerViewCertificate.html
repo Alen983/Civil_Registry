@@ -1,0 +1,65 @@
+{% extends 'CustomerHeader.html' %}
+{% block customercertificate %}
+<form method="POST">
+{% csrf_token%}
+
+<h2 align="center" style="color:brown"> Customer Details</h2>
+<br>
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+   
+            
+<table class="customers" border="1" width="1200" height="200" align="center">
+<tr style="background:#ff3c41">
+    <th>Certificate</th>
+    <th>Your Certificate</th>
+    
+    <th>Amount</th>
+    
+    <th></th>
+    <th></th>
+    </tr>
+    {% for x in data %}
+    <tr>
+    
+        <td>
+            {{x.1}}
+        </td>
+        <td>
+           <a href=" ../static{{x.2}}">{{x.2}}</a>
+        </td>   
+        <td>
+            {{x.4}}
+        </td>
+       
+        
+        <td>
+            <a href='/payment1?id={{x.0}}&cusid={{x.3}}&amt={{x.4}}' >Payment</a>
+        </td>
+        
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+
+</form>
+{% endblock %}

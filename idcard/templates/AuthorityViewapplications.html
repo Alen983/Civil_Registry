@@ -1,0 +1,98 @@
+{% extends 'AuthorityHeader.html' %}
+{% block appli %}
+<form method="POST">
+{% csrf_token%}
+
+<h2 align="center" style="color:brown"> Customer Details</h2>
+<br>
+
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    <table >
+            <tr style="background:#ff3c41">
+    <th>Forwarded Date</th>
+    <th>Date Of Marriage</th>
+    <th>Place Of Marriage</th>
+    <th>Local Area</th>
+    <th>Village</th>
+    <th>Taluk</th>
+    <th>District</th>
+   <th>Customer Id</th>
+    <th>Name</th>
+    
+    <th>Phone Number</th>
+    
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    
+    
+    <tr>
+        {% for x in data %}
+        <td>
+            {{x.3}}
+        </td>
+        <td>
+            {{x.8}}
+        </td>
+        
+        <td>
+            {{x.9}}
+        </td>
+        
+        <td>
+            {{x.10}}
+        </td>
+        <td>
+            {{x.11}}
+        </td>
+        <td>
+            {{x.12}}
+        </td>
+        <td>
+            {{x.13}}
+        </td>
+        <td>
+          {{x.15}}
+      </td>
+      <td>
+          {{x.16}}
+      </td>
+      <td>
+        {{x.17}}
+    </td>
+    <td>
+        {{x.18}}
+    </td>
+    
+        
+        <td>
+            <a href="/viewmarriagecertificate?em={{x.18}}&mid={{x.7}}">Issue</a>
+        </td>
+        
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+
+</form>
+{% endblock %}

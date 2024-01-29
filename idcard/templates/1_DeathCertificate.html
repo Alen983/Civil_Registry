@@ -1,0 +1,59 @@
+{% extends 'CustomerHeader.html' %}
+{% block deathreg %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <h2 align="center" style="color:black">Death Certificate Details</h2>
+    <br>
+    {% if msg %}
+    <script>
+    alert("{{msg}}");
+    </script>
+    {% endif %}
+    <h2 align="left" style="color:black">Legal Information</h2>
+
+    <table class="customers" align="center">
+    
+        <tr><td>Date of Death</td><td><input type="date" name="n1" required max="{{d}}"></td></tr>
+        <tr><td>Name of Deceased</td><td><input type="text" name="n2"  required pattern="[A-Za-z-\s]+" title="enter characters only"></td></tr>
+        <tr><td>Permanent address of the deceased</td><td><input type="text" name="n3" required></td></tr>
+        <tr><td>Gender of the deceased</td><td><input type="radio" name="g1" value="male">Male</td><td><input type="radio" name="g1" value="female" >Female</td></tr>
+        <tr><td>Name of Father/Husband</td><td><input type="text" name="fname"  required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+
+        <tr><td>Name of Mother</td><td><input type="text" name="mname"  required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Address of the deceased at the time of death</td><td><input type="text" name="faddr" required></td></tr>
+        <tr><td>Permanent Address of Parents</td><td><input type="text" name="paddr" required></td></tr>
+        <tr><td>Permanent Address of Parents at the time of birth</td><td><input type="text" name="paddrb"></td></tr>
+        <tr><td>Date of birth of the deceased</td><td><input type="date" name="pob" required max="{{d}}"></td></tr>
+        <tr><td>Place of death</td><td><input type="text" name="pl"  required pattern="[A-Za-z-]+" title="enter characters only"></td></tr>
+        <tr><td>House Address</td><td><input type="text" name="house" required pattern="[A-Za-z\s,.]+" title="enter characters only"></td></tr>
+        <tr><td>Informants Name </td><td><input type="text" name="iname"  required pattern="[A-Za-z-\s]+" title="enter characters only"></td></tr>
+        <tr><td>Informant's address</td><td><input type="text" name="iaddr" required pattern="[A-Za-z\s,.]+" title="enter characters only"></td></tr>
+            <tr><td><h2 align="center" style="color:black">Statistical Information</h2></td></tr>
+        <br>
+        <br>
+        <tr><td>Name of District</td><td><input type="text" name="dis"  required pattern="[A-Za-z-]+" title="enter characters only"></td></tr>
+        <tr><td>Name of State</td><td><input type="text" name="st"  required pattern="[A-Za-z-]+" title="enter characters only"></td></tr>
+        <tr><td>Name of Taluk</td><td><input type="text" name="tal"  required pattern="[A-Za-z-]+" title="enter characters only"></td></tr>
+        <tr><td>Religion</td><td><input type="text" name="rel"  required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Type of medical attention received before death</td><td><input type="radio" name="m1" value="Institutional">Institutional</td><td><input type="radio" name="m1" value="medical attention other than institution" >Medical attention other than Institution</td><td><input type="radio" name="m1" value="no medical attention" >No medical attention</td></tr>
+        <tr><td>Name of disease or ActualCause of death</td><td><input type="text" name="disease"  required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Has the cause of the death medically certified</td><td><input type="radio" name="med" value="Yes">Yes</td><td><input type="radio" name="g1" value="no" >No</td></tr>
+        <tr><td>If used to habitually smoke for how many years?</td><td><input type="text" name="s1" required pattern="[0-9]+" title="enter digits only"></td></tr>
+        <tr><td>If used to habitually chew arecanut in any form (including pan masala) for how many years?</td><td><input type="text" name="s2" required pattern="[0-9]+" title="enter digits only"></td></tr>
+        <tr><td>If used to habitually drink alcohol for how many years?</td><td><input type="text" name="s3" required pattern="[0-9]+" title="enter digits only"></td></tr>
+  
+
+        <tr><td><input type="submit" name="submitdeath" value="Submit"></td></tr>
+        
+    </table>
+<br>
+<br>
+
+        
+   
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

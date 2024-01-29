@@ -1,0 +1,19 @@
+{% extends 'CommonHeader.html' %}
+{% block cusreg %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <h2 align="center" style="color:brown">Contact Us</h2>
+    <br>
+    
+    <table class="customers" align="center" width="400" height="100">
+       <tr><td><b>Contact Us On &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;9854755162</b></td></tr>
+       <br>
+      <tr><td> <b>Mail Us On &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp; Civil@gmail.com</b></td></tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

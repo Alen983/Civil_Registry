@@ -1,0 +1,20 @@
+{% extends 'AdminHeader.html' %}
+{% block cusreg %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <h2 align="center" style="color:brown">Authority Details</h2>
+    <br>
+    
+    <table class="customers" align="center">
+        <tr><td>Authority Name</td><td><input type="text" name="authority"></td></tr>
+       
+        <tr><td><input type="submit" name="submit1" value="Submit"></td></tr>
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

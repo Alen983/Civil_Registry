@@ -1,0 +1,60 @@
+{% extends 'RpoHeader.html' %}
+{% block content1 %}
+<style>
+.gal {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  
+
+}
+
+.gal:hover {
+  border: 1px solid #777;
+}
+
+
+.gal img {
+  width:250px;
+  height: 200px;
+}
+
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+</style>
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <h2 align="center" style="color:brown">Voters ID Details</h2>
+    <br>
+    
+    <table  align="center" >
+       {% for x in data %}
+
+       <tr>
+            <td align="Center" ><img src='../{{x.0}}' alt="hh" width="150" height="150"></td>
+        </tr>
+       
+        <tr><td>Applicants Name:</td><td>{{x.1}}</td>
+             </tr>
+             <tr><td>Fathers Name:</td><td>{{x.2}}</td>
+             </tr>
+             <tr><td>Date of Birth:</td><td>{{x.3}}</td>
+             </tr>
+             <tr><td>Address:</td><td>{{x.4}}</td>
+             </tr>
+             <tr><td>Place:</td><td>{{x.5}}</td>
+             </tr>
+             {% endfor%}
+        <tr><td><a href="#" onclick="window.print()">Upload</a></td></tr>
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

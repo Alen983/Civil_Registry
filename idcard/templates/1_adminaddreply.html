@@ -1,0 +1,23 @@
+{% extends 'AdminHeader.html' %}
+{% block addauthority %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <br>
+    <h2 align="center" style="color:brown">Add Reply</h2>
+    <br>
+    
+    <table class="customers" align="center" width="500">
+       
+        <tr><td>Feedback Id</td><td><input type="text" name="n2" value="{{id}}" required></td></tr>
+       
+        <tr><td> Reply</td><td><input type="text" name="n1" required ></td></tr>
+        <tr><td><input type="submit" name="submit1" value="Submit"></td></tr>
+
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

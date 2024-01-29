@@ -1,0 +1,107 @@
+{% extends 'AuthorityHeader.html' %}
+{% block birth %}
+<form method="POST">
+{% csrf_token%}
+
+<h2 align="center" style="color:brown"> Customer Details</h2>
+<br>
+
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    <table >
+            <tr style="background:#ff3c41">
+    <th>Birth Id</th>
+    <th>Date Of Birth</th>
+    <th>District</th>
+    <th>Gender</th>
+    <th>Child Name</th>
+    <th>Mother Name</th>
+    <th>Father Name</th>
+  
+    <th>Address</th>
+    
+    <th>Hospital</th>
+    
+    <th>Weight</th>
+    <th>Customer Id</th>
+    <th>Name</th>
+    <th>Phone Number</th>
+    <th>Email</th>
+    
+    {% for x in data %}
+    <tr>
+    <td>
+            {{x.7}}
+        </td>
+    <td>
+            {{x.8}}
+        </td>
+        <td>
+            {{x.10}}
+        </td>
+        <td>
+            {{x.11}}
+        </td>
+        
+        <td>
+            {{x.12}}
+        </td>
+        
+        <td>
+            {{x.13}}
+        </td>
+        <td>
+            {{x.14}}
+        </td>
+        <td>
+            {{x.15}}
+        </td>
+        <td>
+            {{x.18}}
+        </td>
+        <td>
+          {{x.20}}
+      </td>
+      <td>
+          {{x.24}}
+      </td>
+      <td>
+          {{x.25}}
+      </td>
+      <td>
+        {{x.26}}
+    </td>
+    <td>
+        {{x.27}}
+    </td>
+        
+        <td>
+            <a href="/viewbirthcertificate?em={{x.27}}&brid={{x.7}}">Issue</a>
+        </td>
+        
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+
+</form>
+{% endblock %}

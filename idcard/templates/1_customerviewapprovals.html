@@ -1,0 +1,72 @@
+
+
+
+{% extends 'CustomerHeader.html' %}
+{% block customercertificate %}
+<form method="POST">
+{% csrf_token%}
+
+{% if msg %}
+<script>
+alert("{{msg}}");
+
+</script>
+{% endif %}
+<h2 align="center" style="color:brown"> Customer Details</h2>
+<br>
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+   
+            
+<table class="customers" border="1" width="1200" height="200" align="center">
+<tr style="background:#ff3c41">
+    <th>Type</th>
+    <th>Appointment Date</th>
+    
+    <th>Status</th>
+    
+   
+    </tr>
+    {% for x in data %}
+    <tr>
+    
+        
+        <td>
+           {{x.2}}
+        </td> 
+        <td>
+            {{x.3}}
+        </td>  
+        <td>
+            {{x.4}}
+        </td>
+       
+        
+       
+        
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+
+</form>
+{% endblock %}

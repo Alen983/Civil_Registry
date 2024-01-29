@@ -1,0 +1,46 @@
+{% extends 'AuthorityHeader.html' %}
+{% block addauthority %}
+<form method="POST">
+    {% csrf_token%}
+  <script src="../static/js/jquery.js"></script>
+    <br>
+    <h2 align="center" style="color:brown">Death Certificate Details</h2>
+    <br>
+     
+    <table  align="center" >
+       {% for x in data %}
+<br>
+<br>
+       <tr>
+            <td align="Center" ><img src="../static/images/authority.png"  alt="hhhh" width="500px" height="250px"></td>
+            
+        </tr>
+        </table>
+        <br>
+        <br>
+    <table  align="center">
+      <tr><br></tr>
+        <tr><td>This &nbsp;&nbsp;is&nbsp;&nbsp; to&nbsp;&nbsp; acknowledge &nbsp;&nbsp;the &nbsp;&nbsp;death&nbsp;&nbsp; of<br>
+           &nbsp;&nbsp;<b> Mr/Mrs.{{data}} </b>&nbsp;&nbsp;on&nbsp;&nbsp; <b>{{dom}} </b>&nbsp;&nbsp;at &nbsp;&nbsp;<b>{{pom}}</b>
+            </td> </tr>
+     </table>
+             <table align="left">
+        <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature:</td></tr>
+        <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="window.print()">Upload</a></td></tr>
+        <br>
+    <br>
+    <br>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    {% endfor%}
+    </form>
+    {% endblock %}

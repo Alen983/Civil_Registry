@@ -1,0 +1,47 @@
+{% extends 'CommonHeader.html' %}
+{% block login %}
+
+{% if msg %}
+<script>
+alert("{{msg}}")
+window.location.href="../login/"
+</script>
+{% endif%}
+<form method="POST">
+
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <br>
+    <h2 align="center" style="color:brown">Login</h2>
+    <br>
+    
+    <table class="customers" align="center" width="500" height="130">
+       
+        
+        <tr><td>Username</td><td><input type="text" name="n1" placeholder="Username"></td></tr>
+        
+<tr><td>Password</td><td><input type="password" name="n2" placeholder="Password" id="myInput" required></td></tr>
+<tr><td><input class="form-control" type="checkbox"  onclick="myFunction()"></td><td>show password</td></tr>
+        <tr><td><input type="submit" name="login" value="Submit"></td></tr>
+        
+							<tr><td><a href="/forgot/" > Customer Forgot Password?</a></td></tr>
+							
+					
+         <script>
+                                function myFunction() {
+                                    debugger;
+                                    var x = document.getElementById("myInput");
+                                    if (x.type === "password") {
+                                        x.type = "text";
+                                    } else {
+                                        x.type = "password";
+                                    }
+                                }
+                            </script>
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

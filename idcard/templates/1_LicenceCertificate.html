@@ -1,0 +1,45 @@
+{% extends 'CustomerHeader.html' %}
+{% block birthreg %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <br>
+    <h2 align="center" style="color:black">License Details</h2>
+    <br>
+<br>
+    <table class="customers" align="center">
+        <tr><td>Leaners License Number</td><td><input type="text" name="n2" placeholder="Specify DL Number" required></td></tr>
+   
+        
+        <tr><td>Name of Applicant</td><td><input type="text" name="cname" required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Date of Birth</td><td><input type="date" name="n1"required max="{{d}}"></td></tr>
+        <tr><td>District</td><td><input type="text" name="n3" required pattern="[A-Za-z-]+" title="enter characters only"></td></tr>
+        <tr><td>Taluk</td><td><input type="text" name="n4" required pattern="[A-Za-z-]+" title="enter characters only"></td></tr>
+        <tr><td>Email</td><td><input type="email" name="n5" required ></td></tr>
+        <tr><td>Phone Number</td><td><input type="text" name="n6" required pattern="[0-9]{10}" minlength="10" maxlength="10" title="enter digits only"></td></tr>
+        <tr><td>Address</td><td><input type="text" name="g1" required ></td></tr>
+
+        <tr><td>Identity Proof</td><td><input type="file" name="mname" required ></td></tr>
+        <tr><td>Address Proof</td><td><input type="file" name="fname" required ></td></tr>
+        <tr><td>Age Proof</td><td><input type="file" name="paddr" required></td></tr>
+        <tr><td>Photo</td><td><input type="file" name="p1"></td></tr>
+        <tr><td>Signature With Date</td><td><input type="file" name="sig"></td></td></tr>
+        <tr><td>Choose Date for appiontment</td><td><input type="date" name="hosp" required min={{d}}></td></tr>
+      
+        <tr><td><input type="submit" name="licencesubmit" value="Submit Details"></td></tr>
+        
+    </table>
+<br>
+<br>
+    
+   
+        
+        
+        
+    
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

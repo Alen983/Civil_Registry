@@ -1,0 +1,50 @@
+{% extends 'AuthorityHeader.html' %}
+{% block addauthority %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <br>
+    <h2 align="center" style="color:brown">Marriage Certificate Details</h2>
+    <br>
+     
+    <table  align="center" >
+       {% for x in data %}
+<br>
+<br>
+       <tr>
+            <td align="Center" ><img src="../static/images/authority.png"  alt="hhhh" width="500px" height="250px"></td>
+            
+        </tr>
+        </table>
+        <br>
+        <br>
+        <table align="center"> 
+   <tr><br></tr>
+        <tr><td>This &nbsp;&nbsp; is&nbsp;&nbsp;  to &nbsp;&nbsp; cerify&nbsp;&nbsp;  that &nbsp;&nbsp; <b>Mr. {{x.1}}</b> &nbsp;&nbsp;  and &nbsp;&nbsp;<b>  Mrs.{{x.0}} </b>
+            &nbsp;&nbsp;Were  &nbsp;&nbsp; <br>United   &nbsp;&nbsp;in &nbsp;&nbsp;  Marriage &nbsp;&nbsp;  on &nbsp;&nbsp; <b> {{dom}} </b> at  &nbsp;&nbsp;<b> {{pom}}</b>. </td> </td>
+             </tr>
+        </table>  
+        <br>
+        <br> 
+        <table align="left">
+        <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature:</td></tr>
+        <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="window.print()">Upload</a></td></tr>
+        <br>
+    <br>
+    <br>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    {% endfor%}
+    </form>
+    {% endblock %}
+
+   

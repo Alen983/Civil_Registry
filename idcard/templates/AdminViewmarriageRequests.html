@@ -1,0 +1,151 @@
+{% extends 'AdminHeader.html' %}
+{% block marriagerequest %}
+<form method="POST">
+{% csrf_token%}
+
+<h2 align="center" style="color:brown"> Customer Details</h2>
+<br>
+
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    <table >
+            <tr style="background:#ff3c41">
+    <th>Date Of Marriage</th>
+    <th>Place Of Marriage</th>
+    <th>Local Area</th>
+    <th>Village</th>
+    <th>Taluk</th>
+    <th>District</th>
+  
+    <th>Name</th>
+    
+    <th>Phone Number</th>
+    
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    </tr>
+    {% for x in data %}
+    <tr>
+        
+       
+        <td>
+            {{x.1}}
+        </td>
+        <td>
+            {{x.2}}
+        </td>
+        <td>
+            {{x.3}}
+        </td>
+        <td>
+            {{x.4}}
+        </td>
+        
+        <td>
+            {{x.5}}
+        </td>
+        <td>
+            {{x.6}}
+        </td>
+       
+        <td>
+            {{x.9}}
+        </td>
+        <td>
+            {{x.10}}
+        </td>
+        <td>
+            {{x.11}}
+        </td>
+      
+        
+        
+        <td>
+            <a href='/forwardmarriage/?id={{x.0}} & cusid={{cusid}}'>Forward</a>
+        </td>
+         <td>
+            <a href='/rejectmarriagecertificate/?id={{x.0}}'>Reject</a>
+        </td>
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2 align="center" style="color:brown"> Forwarded Details</h2>
+</br>
+</br>
+</br>
+ <table >
+            <tr style="background:#ff3c41">
+    <th>Date of marrage</th>
+    <th>Place of marrage</th>
+    <th>Local area</th>
+    <th>village</th>
+    <th>thaluk</th>
+     <th>district</th>
+     <th>customer name</th>
+     <th>email</th>
+     <th>phone no</th>
+    
+    {% for x in data1 %}
+    <tr>
+        
+       
+       
+        <td>
+            {{x.1}}
+        </td>
+        <td>
+            {{x.2}}
+       
+        </td>
+        <td>
+            {{x.3}}
+        </td> 
+        <td>
+            {{x.4}}
+        </td> 
+        <td>
+            {{x.5}}
+        </td>  
+        <td>
+            {{x.6}}
+        </td>       
+        <td>
+            {{x.9}}
+        </td>       
+        <td>
+            {{x.10}}
+        </td>       
+        <td>
+            {{x.11}}
+        </td>        
+          </tr> 
+
+    {% endfor %} 
+</table>
+</form>
+{% endblock %}

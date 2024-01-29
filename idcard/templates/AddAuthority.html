@@ -1,0 +1,31 @@
+{% extends 'AdminHeader.html' %}
+{% block addauthority %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <br>
+    <h2 align="center" style="color:brown">Authority Details</h2>
+    <br>
+    
+    <table class="customers" align="center" width="500">
+       
+        <tr><td>District</td><td><select name="district" id="district"><option value="" required>--Select District--</option>
+            {% for x in data %}<option value="{{x.1}}">{{x.1}}</option>
+            {% endfor %} </select></td></tr>
+        <tr><td> Name of Head</td><td><input type="text" name="n1" required pattern="[A-Za-z-]+" title="enter characters only"></td></tr>
+        <tr><td>Address</td><td><input type="text" name="n2" required></td></tr>
+        <tr><td>Phone Number</td><td><input type="text" name="n3" required minlength="10" maxlength="10" pattern="[6-9]{1}[0-9]{9}" title="enter 10 digits only"></td></tr>
+        <tr><td>Category</td><td><select name="category" id="category" required=" "><option value="">--Select category--</option>
+            {% for x in auth %}<option value="{{x.1}}">{{x.1}}</option>
+            {% endfor %} </select></td></tr>
+        <tr><td>Username</td><td><input type="text" name="n5" required></td></tr>
+        <tr><td>Password</td><td><input type="password" name="n6" required pattern="[A-Za-z0-9]{6,}" title="Less than 6 password is weak"></td></tr>
+        <tr><td><input type="submit" name="submit1" value="Submit"></td></tr>
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

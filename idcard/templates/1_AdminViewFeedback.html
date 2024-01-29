@@ -1,0 +1,68 @@
+{% extends 'AdminHeader.html' %}
+{% block adminviewfeedback %}
+<form method="POST">
+{% csrf_token%}
+
+<h2 align="center" style="color:brown"> Customer Details</h2>
+<br>
+<br>
+<br>
+
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    <table >
+            <tr style="background:#ff3c41">
+    <th>Authority</th>
+    <th>Feedback</th>
+    <th>Date</th>
+    <th>UserName</th>
+    
+    
+    
+    {% for x in data %}
+    <tr>
+        
+       
+       
+        <td>
+            {{x.2}}
+        </td>
+        <td>
+            {{x.3}}
+        </td>
+        <td>
+            {{x.4}}
+        </td> 
+        <td>
+            {{x.7}}
+        </td>  
+        
+        <td>
+          <a href='/adminaddreply/?id={{x.0}}'>Reply</a>
+      </td>
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+
+</form>
+{% endblock %}

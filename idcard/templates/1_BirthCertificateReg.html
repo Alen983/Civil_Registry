@@ -1,0 +1,69 @@
+{% extends 'CustomerHeader.html' %}
+{% block birthreg %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <br>
+    <h2 align="center" style="color:black">Birth Certificate Details</h2>
+     {% if msg %}
+    <script>
+    alert("{{msg}}");
+    </script>
+    {% endif %}
+    <br>
+<br>
+    <table class="customers" align="center">
+    
+       <tr><td>Date of Birth</td><td><input type="date" name="n1"required max="{{d}}"></td></tr>
+        <tr><td>Time Of Birth</td><td><input type="text" name="n2" placeholder="Specify am/pm" required></td></tr>
+        <tr><td>District</td><td><input type="text" name="n3" required pattern="[A-Za-z-]+" title="enter characters only"></td></tr>
+        <tr><td>Gender</td><td><input type="radio" name="g1" value="male">Male<input type="radio" name="g1" value="female" >Female</td></tr>
+        <tr><td>Name of child</td><td><input type="text" name="cname" required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Name of Mother</td><td><input type="text" name="mname" required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Name of Father</td><td><input type="text" name="fname" required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Permanent Address of Parents</td><td><input type="text" name="paddr" required></td></tr>
+        <tr><td>Permanent Address of Parents at the time of birth</td><td><input type="text" name="paddrb" required></td></tr>
+        <tr><td>Place of Birth</td><td><input type="text" name="pob" required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Name of Hospital</td><td><input type="text" name="hosp" required pattern="[A-Za-z\s,()]+" title="enter characters only"></td></tr>
+        <tr><td>Method of Delivery</td><td><select name="deli">
+        <option >---select method---</option>
+         <option value="normal">Normal</option>
+         <option value="Cesarean surgery"> Cesarean surgery </option>
+         </td>
+         </select>
+         </tr>
+        <tr><td>Birth Weight(in Kgs)</td><td><input type="text" name="bw" required  required  pattern="[0-9]+" title="enter 10 digits only"></td></tr>
+        <tr><td>Duration of Pregnancy(months)</td><td><select name="dur">
+        <option >---select Month---</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+                  <option value="7">7</option>
+
+         <option value="8">8</option>
+                  <option value="9">9</option>
+                           <option value="10">10</option>
+                                    <option value="11">11</option>
+
+
+
+
+         </td>
+         </select></td></tr>
+        <tr><td>Reporting Date</td><td><input type="date" name="rep" required></td></tr>
+        <tr><td><input type="submit" name="birthsubmit" value="Submit Details"></td></tr>
+        
+    </table>
+<br>
+<br>
+    
+   
+        
+        
+        
+    
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

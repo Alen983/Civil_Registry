@@ -1,0 +1,25 @@
+{% extends 'AuthorityHeader.html' %}
+{% block upload %}
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <h2 align="center" style="color:brown">Authority Details</h2>
+    <br>
+    
+    <table class="customers" align="center">
+       
+            <tr><td>Customer Id</td><td><input type="text" name="n3" pattern="[0-9]+" title="enter digits only" required></td></tr>
+        <tr><td>Upload Certificate</td><td><input type="file" name="n1"required ></td></tr>
+        <tr><td>Amount</td><td><input type="text" name="n2" pattern="[0-9]+" title="enter digits only" required></td></tr>
+        <tr><td>Certificate Type</td><td><input type="text" name="n4" required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+       
+      
+        <tr><td><input type="submit" name="submitamount" value="Submit"></td></tr>
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

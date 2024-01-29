@@ -1,0 +1,97 @@
+{% extends 'RpoHeader.html' %}
+{% block content1 %}
+<form method="POST">
+{% csrf_token%}
+
+<h2 align="center" style="color:brown"> Customer Details</h2>
+<br>
+
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    <table >
+            <tr style="background:#ff3c41">
+      <th>District</th>
+    <th>Applicant Name</th>
+    
+    <th>Father Name</th>
+  
+  
+    <th>Age</th>
+    <th>Date Of Birth</th>
+    <th>House Name</th>
+ <th>Street Name</th>
+    <th>Town</th>
+    <th>Post Office</th>
+   <th>Pincode</th>
+    <th></th>
+    <th></th>
+    
+    {% for x in data %}
+    <tr>
+    
+         <td>
+            {{x.8}}
+        </td>
+        <td>
+            {{x.9}}
+        </td>
+        <td>
+            {{x.10}}
+        </td>
+        <td>
+            {{x.11}}
+        </td>
+        
+        <td>
+            {{x.12}}
+        </td>
+        <td>
+            {{x.14}}
+        </td>
+       <td>
+            {{x.15}}
+        </td>
+       
+        <td>
+            {{x.16}}
+        </td>
+        <td>
+            {{x.17}}
+        </td>
+        <td>
+            {{x.18}}
+        </td>
+        
+        <td>
+            <a href='/viewvotersidcertificate/?em={{x.9}}&&fwid={{x.0}} '>Issue</a>
+        </td>
+        <td>
+            <a href='/rejectvotersid/?fwid={{x.0}} '>Reject</a>
+        </td>
+        
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+
+</form>
+{% endblock %}

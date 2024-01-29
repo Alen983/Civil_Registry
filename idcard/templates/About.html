@@ -1,0 +1,20 @@
+{% extends 'CommonHeader.html' %}
+{% block cusreg %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <br>
+    <br>
+    <h2 align="center" style="color:brown">About Us</h2>
+    <br>
+    
+    <table class="customers" align="center">
+      <tr><td>The CIVILREGISTRY  is an agency  to help indian citizens to apply for various records like Birth Certificate,Marriage Certificate,Votersid,Death Certificate etc.</p>
+</td></tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

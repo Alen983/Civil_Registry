@@ -1,0 +1,63 @@
+{% extends 'CustomerHeader.html' %}
+{% block marr %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <h2 align="center" style="color:black">Marriage Certificate Details</h2>
+    <br>
+    
+    <table class="customers" align="center">
+    
+        <tr><td>Date of Marriage</td><td><input type="date" name="n1" required max="{{d}}"></td></tr>
+        <tr><td>Place of Marriage(specify hall,mandapam,etc)</td><td><input type="text" name="n2" required></td></tr>
+        <tr><td>Local Area</td><td><input type="text" name="n3"></td></tr>
+        <tr><td>Village</td><td><input type="text" name="n4" required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Taluk</td><td><input type="text" name="n5" required pattern="[A-Za-z-]+" title="enter characters only"></td></tr>
+        <tr><td>District</td><td><input type="text" name="n6" pattern="[A-Za-z-]+" title="enter characters only" required></td></tr>        
+    </table>
+<br>
+<br>
+    <h2 align="center" style="color:black">Details of Parties of the Marriage</h2>
+    <table class="customers" align="center">
+        <tr>
+         <td><h2 align="left" style="color:black">Details</h2></td><td><h2 style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bride</h2></td><td><h2 style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Groom</h2></td>
+    </tr>
+        <tr><td>Registration ID</td><td><input type="text" name="id" required></td><td><input type="text" name="id2" required></td></tr>
+        <tr><td>Name In Full(Caption Letters)</td><td><input type="text" name="name1"  required pattern="[A-Za-z\s]+" title="enter characters only"></td><td><input type="text"  required pattern="[A-Za-z\s]+" title="enter characters only"  name="name2"></td></tr>
+        <tr><td>Photo</td><td><input type="file" name="p1" required></td><td><input type="file" name="p2" required></td></tr>
+        <tr><td></td><td style="color:red">enter file less than 90mb</td></tr>
+        <tr><td>Nationality</td><td><input type="text" name="nat1"  required pattern="[A-Za-z-]+" title="enter characters only"></td><td><input type="text" name="nat2"  required pattern="[A-Za-z-\s]+" title="enter characters only"></td></tr>
+        <tr><td>Date Of Birth</td><td><input type="date" name="dob1" max="{{d}}"></td><td><input type="date" name="dob2" max="{{d}}"></td></tr>
+ <tr><td></td><td style="color:red">application gets rejected if age is less than 18</td><td style="color:red">application gets rejected if age is less than 18</td></tr>
+
+        <tr><td>Occupation</td><td><input type="text" name="occu1"  required pattern="[A-Za-z\s]+" title="enter characters only"></td><td><input type="text" name="occu2"  required pattern="[A-Za-z-\s]+" title="enter characters only"></td></tr>
+        <tr><td>Permanent Address</td><td><input type="text" name="addr1" required></td><td><input type="text" name="addr2" required></td></tr>
+        <tr><td>Present Address</td><td><input type="text" name="paddr1" required></td><td><input type="text" name="paddr2" required></td></tr>
+       
+        <tr><td>Signature With Date</td><td><input type="file" name="sig" required></td><td><input type="file" name="sig1" required></td></tr>
+        <tr><td></td><td style="color:red">enter file less than 90mb</td></tr>
+        <tr><td>Name of Father/Guardian and Relationship</td><td><input type="text" name="fname"  required pattern="[A-Za-z\s]+" title="enter characters only"></td><td><input type="text" name="fname1"  required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        
+        <tr><td>Signature of Father With Date</td><td><input type="file" name="fsig" required></td><td><input type="file" name="fsig1" required></td></tr>
+        <tr><td></td><td style="color:red">enter file less than 90mb</td></tr>
+        <tr><td>Name of Mother</td><td><input type="text" name="mname"  required pattern="[A-Za-z\s]+" title="enter characters only"></td><td><input type="text" name="mname1"  required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+        <tr><td>Signature of Mother With Date</td><td><input type="file" name="msig" required></td><td><input type="file" name="msig1" required></td></tr>
+    <tr><td></td><td style="color:red">enter file less than 90mb</td></tr>
+    <tr>  <td><h4 align="center" style="color:black">Witness Of Solemnization of Marriage</h4></td><td><h4 align="left" style="color:black">Witness1</h4></td><td><h4 align="center" style="color:black">Witness2</h4></td>
+    </td></tr>
+    <tr><td>Registration ID</td><td><input type="text" name="reg"></td><td><input type="text" name="reg1"></td></tr>
+    <tr><td>Name</td><td><input type="text" name="wname"  required pattern="[A-Za-z\s]+" title="enter characters only"></td><td><input type="text" name="wname1"  required pattern="[A-Za-z\s]+" title="enter characters only"></td></tr>
+    <tr><td>Address</td><td><input type="text" name="waddr" required></td><td><input type="text" name="waddr1" required></td></tr>
+    <tr><td>Signature with date</td><td><input type="file" name="sdate" required></td><td><input type="file" name="sdate1" required></td></tr>
+    
+        
+        
+        <tr><td><input type="submit" name="madd" value="Add"></td></tr>
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

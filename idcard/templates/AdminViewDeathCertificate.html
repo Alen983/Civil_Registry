@@ -1,0 +1,164 @@
+{% extends 'AdminHeader.html' %}
+{% block marriagerequest %}
+<form method="POST">
+{% csrf_token%}
+
+<h2 align="center" style="color:brown"> Death Details</h2>
+<br>
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 95%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    <table >
+            <tr style="background:">
+    <th>Date Of Death</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>Father Name</th>
+    <th>Mother Name</th>
+    <th>Permanent Address</th>
+    <th>Date of Birth</th>
+   
+  
+   
+    <th>Place Of Death</th>
+   <th>Informants Name</th>
+    
+   
+    <th></th>
+    <th></th>
+    </tr>
+    {% for x in data %}
+    <tr>
+        
+       
+        <td>
+            {{x.1}}
+        </td>
+        <td>
+            {{x.2}}
+        </td>
+        <td>
+            {{x.3}}
+        </td>
+        <td>
+            {{x.4}}
+        </td>
+        
+        <td>
+            {{x.5}}
+        </td>
+        <td>
+            {{x.6}}
+        </td>
+       
+        <td>
+            {{x.9}}
+        </td>
+        <td>
+            {{x.10}}
+        </td>
+        <td>
+            {{x.11}}
+        </td>
+      <td>
+            {{x.13}}
+        </td>
+        
+        
+        <td>
+            <a href='/forwarddeath/?id={{x.0}} & cusid={{x.20}}'>Forward</a>
+        </td>
+         <td>
+            <a href='/adminrejectcustomer/?id={{x.0}}'>Reject</a>
+        </td>
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+
+<h2 align="center" style="color:brown"> Death Forwarded Details</h2>
+<br>
+<table >
+            <tr style="background:">
+    <th>Date Of Death</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>Father Name</th>
+    <th>Mother Name</th>
+    <th>Permanent Address</th>
+    <th>Date of Birth</th>
+   
+  
+   
+    <th>Place Of Death</th>
+   <th>Informants Name</th>
+    
+   
+    <th></th>
+    <th></th>
+    </tr>
+    {% for x in data1 %}
+    <tr>
+        
+       
+        <td>
+            {{x.1}}
+        </td>
+        <td>
+            {{x.2}}
+        </td>
+        <td>
+            {{x.3}}
+        </td>
+        <td>
+            {{x.4}}
+        </td>
+        
+        <td>
+            {{x.5}}
+        </td>
+        <td>
+            {{x.6}}
+        </td>
+       
+        <td>
+            {{x.9}}
+        </td>
+        <td>
+            {{x.10}}
+        </td>
+        <td>
+            {{x.11}}
+        </td>
+      <td>
+            {{x.13}}
+        </td>
+        
+      
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+</form>
+{% endblock %}

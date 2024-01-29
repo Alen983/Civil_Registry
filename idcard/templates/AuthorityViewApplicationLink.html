@@ -1,0 +1,23 @@
+{% extends 'AuthorityHeader.html' %}
+{% block appli %}
+<form method="POST">
+    {% csrf_token%}
+    <script src="../static/js/jquery.js"></script>
+    <h2 align="center" style="color:brown">Applications</h2>
+    <br>
+    
+    <table class="customers" align="center">
+       
+        <tr><td><a href="/viewauthorityapplication/">Marriage Registration</a></td></tr>
+        <tr><td><a href="/viewauthoritybirthapplication/">Birth Certificate Registration</a></td></tr>
+        <tr><td><a href="/viewauthoritydeathapplication/">Death Registration</a></td></tr>
+        
+        
+        
+    </table>
+    <br>
+    <br>
+    <br>
+    
+    </form>
+    {% endblock %}

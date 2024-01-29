@@ -1,0 +1,107 @@
+{% extends 'AuthorityHeaderlicence.html' %}
+{% block birth %}
+<form method="POST">
+{% csrf_token%}
+
+<h2 align="center" style="color:brown"> Customer Details</h2>
+<br>
+
+<style>
+            table {
+              font-family: arial, sans-serif;
+              border-collapse: collapse;
+              width: 85%;
+              margin-left: 3%;
+              border: #000000;
+            }
+           
+            td, th {
+              border: 1px solid #dddddd;
+              text-align: left;
+              padding: 8px;
+            }
+           
+            tr:nth-child(even) {
+              background-color: #dddddd;
+            }
+            </style>
+    <table >
+            <tr style="background:#ff3c41">
+            <th>Licence Number</th>
+   
+    <th>Name</th>
+    <th>Date Of Birth</th>
+    <th>District</th>
+     <th>Taluk</th>
+    <th>Email</th>
+    <th>Phone Number</th>
+    <th>Address</th>
+    <th>Id Proof</th>
+   
+  
+    <th>Image</th>
+    <th>Signature</th>
+    <th>Appiontment Date</th>
+    <th></th>
+    <th></th>
+    
+    {% for x in data %}
+     <tr>
+        
+       
+        <td>
+            {{x.1}}
+        </td>
+        <td>
+            {{x.2}}
+        </td>
+        <td>
+            {{x.3}}
+        </td>
+        <td>
+            {{x.4}}
+        </td>
+        
+        <td>
+            {{x.5}}
+        </td>
+        <td>
+            {{x.6}}
+        </td>
+        <td>
+            {{x.7}}
+        </td>
+        <td>
+            {{x.8}}
+        </td>
+        <td>
+            <a href=" ../{{x.9}}">{{x.9}}</a>
+        </td>
+       
+        
+      
+         <td>
+            <a href=" ../{{x.12}}">{{x.12}}</a>
+        </td>
+         <td>
+            <a href=" ../{{x.13}}">{{x.13}}</a>
+        </td>
+         <td>
+            {{x.14}}
+        </td>
+        
+         <td>
+            <a href='/authorityapprovelicence/?id={{x.17}}'>Approve</a>
+        </td>
+         <td>
+            <a href='/adminrejectcustomer/?id={{x.17}}'>Reject</a>
+        </td>
+          </tr> 
+    {% endfor %} 
+</table>
+<br>
+<br>
+<br>
+
+</form>
+{% endblock %}
