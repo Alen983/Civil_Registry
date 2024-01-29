@@ -1,4 +1,4 @@
-# Civil Registry
+# Civil Registry👨‍💻
 
 <p> The intention of this system is to give awareness about the government or legal documents and its 
 registration details as well as to help to register or apply for those documents. The main purpose of the 
@@ -9,3 +9,5 @@ and register certificates like birth, death, marriage etc. This system also allo
 for these certificates and view the details regarding the documents. In order to apply for any certificate or 
 government records a citizen needs to present at the government offices and it will increase unwanted 
 rushes at the government offices and time wasting</p>
+
+
