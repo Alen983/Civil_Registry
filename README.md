@@ -10,20 +10,12 @@ for these certificates and view the details regarding the documents. In order to
 government records a citizen needs to present at the government offices and it will increase unwanted 
 rushes at the government offices and time wasting</p>
 
-pie
-"Movies" : 80
-"TV shows" : 20
+
 
 ## Software Specifications
-pie
-"Movies" : 80
-"TV shows" : 20
 
-pie
-"Python-Django": 5.3
-"Mysql" : 35
-"HTML" : 63.3
-"CSS" : 18.2
-"Javascript" : 13.2
+FrameWork : "Python-Django"
+Database : "Mysql" 
+Frontend Development : "HTML" , "CSS" ,"Javascript"
 
 
