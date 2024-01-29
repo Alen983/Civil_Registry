@@ -14,8 +14,8 @@ rushes at the government offices and time wasting</p>
 
 ## Software Specifications
 
-FrameWork : "Python-Django"
-Database : "Mysql" 
-Frontend Development : "HTML" , "CSS" ,"Javascript"
+FrameWork : "Python-Django"  
+Database : "Mysql"  
+Frontend Development : "HTML" , "CSS" ,"Javascript"  
 
 
