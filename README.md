@@ -11,6 +11,9 @@ government records a citizen needs to present at the government offices and it w
 rushes at the government offices and time wasting</p>
 
 ## Software Specifications
+pie
+"Movies" : 80
+"TV shows" : 20
 
 pie
 "Python-Django": 5.3
