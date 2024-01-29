@@ -1,4 +1,4 @@
-# Civil Registry👨‍💻
+# Civil Registry⚖
 
 <p>  The project entitled “CIVIL REGISTRY” is a web-based system or agency to help 
 Indian citizens to apply for various records like passport, driving license, voter’s ID card, ration card etc. 
