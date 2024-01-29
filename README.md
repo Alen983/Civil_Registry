@@ -18,4 +18,10 @@ FrameWork : "Python-Django"
 Database : "Mysql"  
 Frontend Development : "HTML" , "CSS" ,"Javascript"  
 
+## Future Enhancement
+One potential future enhancement for the Civil Registry project could be the implementation of 
+biometric authentication for user verification. Biometric authentication involves using unique 
+physical characteristics, such as fingerprints or facial recognition, to confirm the identity of a 
+user
+
 
