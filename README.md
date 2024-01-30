@@ -7,8 +7,6 @@ for these certificates and view the details regarding the documents. In order to
 government records a citizen needs to present at the government offices and it will increase unwanted 
 rushes at the government offices and time wasting</p>
 
-
-
 ## Software Specifications
 
 FrameWork : "Python-Django"  
